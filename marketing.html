@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Marketing Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden; /* Impede o movimento horizontal */
+        }
+
+        header {
+            width: 100%;
+            background-color: #1e1e1e;
+            padding: 15px;
+            display: flex;
+            justify-content: center; /* Centraliza o conteúdo do header */
+            align-items: center;
+            position: relative;
+        }
+
+        h1 {
+            color: #00aaff;
+            margin: 0;
+            font-size: 1.8em;
+            position: relative; /* Mantém a posição do título em relação ao menu */
+        }
+
+        /* Estilos para o ícone do menu hambúrguer */
+        .hamburger {
+            cursor: pointer;
+            width: 40px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            left: 20px; /* Mantém o ícone do menu hambúrguer à esquerda */
+            top: 15px;
+        }
+
+        .hamburger div {
+            width: 100%;
+            height: 4px; 
+            background-color: #00aaff;
+            transition: all 0.3s ease;
+        }
+
+        /* Estilos para o menu */
+        .menu {
+            display: none;
+            flex-direction: column;
+            background-color: #1e1e1e;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .menu a {
+            padding: 15px;
+            text-decoration: none;
+            color: #00aaff;
+            font-size: 1.2em;
+            border-bottom: 1px solid #333;
+        }
+
+        .menu a:hover {
+            background-color: #333;
+        }
+
+        .menu.open {
+            display: flex;
+        }
+
+        /* Animação de abrir e fechar do menu hambúrguer */
+        .hamburger.open div:nth-child(1) {
+            transform: rotate(45deg) translateY(10px);
+        }
+
+        .hamburger.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open div:nth-child(3) {
+            transform: rotate(-45deg) translateY(-10px);
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            background-color: #1e1e1e;
+            color: white;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Estilos para os botões das redes sociais */
+        .social-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex; /* Muda para flex */
+            gap: 10px; /* Espaço entre os botões */
+        }
+
+        .social-button {
+            background-color: transparent; /* Remove fundo */
+            border: none; /* Remove borda */
+            cursor: pointer; /* Cursor de ponteiro */
+            padding: 0; /* Remove padding */
+            width: 45px; /* Largura fixa */
+            height: 110px; /* Altura fixa */
+            transition: transform 0.3s; /* Transição para efeito de hover */
+        }
+
+        .social-button:hover {
+            transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+        }
+
+        /* Estilos para a seção de ajuda */
+        .help-section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #1e1e1e;
+            margin: 20px;
+            border-radius: 8px;
+            flex: 1; /* Faz a seção ocupar o espaço restante */
+        }
+
+        .help-section h2 {
+            color: #00aaff;
+            margin-bottom: 20px;
+        }
+
+        .help-section p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+        }
+
+        /* Media Queries para dispositivos móveis */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .menu a {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <h1>Portal do Nômade Digital</h1>
+    </header>
+
+    <div class="menu" id="menu">
+        <a href="seo.html">1. Guia Completo de SEO</a>
+        <a href="estrategia-conteudo.html">2. Estratégias de Conteúdo</a>
+        <a href="marketing-midias-sociais.html">3. Marketing de Mídias Sociais</a>
+        <a href="email-marketing.html">4. Email Marketing Eficiente</a>
+        <a href="analise-dados.html">5. Análise de Dados e Métricas</a>
+        <a href="ppc-publicidade.html">6. PPC e Publicidade Online</a>
+        <a href="tendencias-marketing-digital.html">7. Tendências de Marketing</a>
+        <a href="branding-digital.html">8. Branding Digital</a>
+        <a href="marketing-afiliados.html">9. Marketing de Afiliados</a>
+        <a href="casos-de-sucesso.html">10. Casos de Sucesso</a>
+    </div>
+
+    <div class="help-section">
+        <h2>Como Funciona</h2>
+        <p>Este portal oferece uma navegação fácil e intuitiva. Use o menu hamburguer no canto superior esquerdo para acessar as diferentes seções sobre marketing digital. Basta clicar nos links para explorar as estratégias e dicas que temos para oferecer.</p>
+        <p>Além disso, você pode seguir nossas redes sociais no canto inferior direito para ficar por dentro das novidades e conteúdos exclusivos!</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Portal do Nômade Digital. Todos os direitos reservados.</p>
+    </footer>
+
+    <div class="social-buttons">
+        <a href="https://www.instagram.com/nomade__digital01/" target="_blank">
+            <button class="social-button">
+                <img src="insta.png" alt="Instagram" style="width: 100%; height: 100%; object-fit: contain;">
+            </button>
+        </a>
+        <a href="https://www.tiktok.com/@nomade_digital1?lang=en" target="_blank">
+            <button class="social-button">
+                <img src="tiktok.png" alt="TikTok" style="width: 100%; height: 100%; object-fit: contain;">
+            </button>
+        </a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('open');
+            hamburger.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
